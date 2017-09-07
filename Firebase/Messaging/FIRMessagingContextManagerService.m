@@ -128,6 +128,7 @@ typedef NS_ENUM(NSUInteger, FIRMessagingContextManagerMessageType) {
 
 + (void)scheduleLocalNotificationForMessage:(NSDictionary *)message
                                      atDate:(NSDate *)date {
+  /*
   NSDictionary *apsDictionary = message;
   UILocalNotification *notification = [[UILocalNotification alloc] init];
 
@@ -168,6 +169,7 @@ typedef NS_ENUM(NSUInteger, FIRMessagingContextManagerMessageType) {
   }
 
   [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+  */
 }
 
 + (NSDictionary *)parseDataFromMessage:(NSDictionary *)message {
