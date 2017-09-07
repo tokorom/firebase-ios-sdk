@@ -405,17 +405,6 @@ NSString * const FIRMessagingRegistrationTokenRefreshedNotification =
 
   } else if ([appDelegate respondsToSelector:openURLWithOptionsSelector]) {
     [appDelegate application:application openURL:url options:@{}];
-
-  // Similarly, |application:openURL:sourceApplication:annotation:| will also always be called, due
-  // to the default swizzling done by FIRAAppDelegateProxy in Firebase Analytics
-  } else if ([appDelegate respondsToSelector:openURLWithSourceApplicationSelector]) {
-    [appDelegate application:application
-                     openURL:url
-           sourceApplication:FIRMessagingAppIdentifier()
-                  annotation:@{}];
-
-  } else if ([appDelegate respondsToSelector:handleOpenURLSelector]) {
-    [appDelegate application:application handleOpenURL:url];
   }
 }
 
