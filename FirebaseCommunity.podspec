@@ -15,6 +15,7 @@ Firebase Development CocoaPod including experimental and community supported fea
   s.source           = { :git => 'https://github.com/firebase/firebase-ios-sdk.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/Firebase'
   s.ios.deployment_target = '8.0'
+  s.tvos.deployment_target = '10.0'
   s.osx.deployment_target = '10.10'
   s.default_subspec  = 'Root'
   s.preserve_paths = 'README.md'
@@ -77,7 +78,7 @@ Firebase Development CocoaPod including experimental and community supported fea
   end
 
   s.subspec 'Messaging' do |sp|
-    sp.platform = 'ios'
+    sp.platform = 'tvos'
     sp.source_files = 'Firebase/Messaging/**/*.[mh]'
     sp.requires_arc = 'Firebase/Messaging/*.m'
 
@@ -98,7 +99,7 @@ Firebase Development CocoaPod including experimental and community supported fea
   s.subspec 'Storage' do |sp|
     sp.source_files = 'Firebase/Storage/**/*.[mh]'
     sp.public_header_files = 'Firebase/Storage/Public/*.h'
-    sp.ios.framework = 'MobileCoreServices'
+    sp.tvos.framework = 'MobileCoreServices'
     sp.osx.framework = 'CoreServices'
     sp.dependency 'FirebaseCommunity/Core'
     sp.dependency 'GTMSessionFetcher/Core', '~> 1.1'
